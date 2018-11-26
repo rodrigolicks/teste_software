@@ -16,7 +16,6 @@ import static org.junit.Assert.*;
 
 public class TestesUnitarios {
 
-
     @Rule
     public IntentsTestRule<CameraActivity> intentsTestRule = new IntentsTestRule<>(CameraActivity.class);
 
@@ -36,7 +35,7 @@ public class TestesUnitarios {
     @Test
     public void insertFabricacaoChecagem_testDesenho() throws Exception {
         MainActivity activity = rule.getActivity();
-        activity.insertFabricacaoChecagem(74,9898,9,"F1447", "CB1447A", 227101, 60,"J", "227101.60.0");
+        activity.insertFabricacaoChecagem(74, 9898, 9, "F1447", "CB1447A", 227101, 60,"J", "227101.60.0");
         Thread.sleep(6000);
         String desenhoRecebido = activity.fabricacaoDados.body().getData().getRow().get(0).getDesenhoId().getValue();
         Log.d("DESENHO", desenhoRecebido);
@@ -49,12 +48,5 @@ public class TestesUnitarios {
         resultData.putExtra("tipo", "1");
         resultData.putExtra("leitura", "227102.2.0");
         Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
-
-
     }
-
-
-
-
-
 }
